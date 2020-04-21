@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/home/sina/.local/share/virtualenvs/djtr-ToVB1-AL/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
