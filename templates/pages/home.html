@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block body %}
+<h1>hello this world</h1>
+<div class="content">loading ...</div>
+<script>
+  const cnt = document.querySelector(".content");
+  let out = "";
+  fetch("/tweet", {
+    method: "Get",
+  })
+    .then((res) => res.json())
+    .then((resualt) => {
+      if (resualt.res) {
+        for (const item of resualt.res) {
+          console.log(item);
+
+          out += `
+                  <div class="mb-4">
+                  <h1>${item.id} </h1>
+                  <p>${item.content} </p>
+                  </div>  
+                    `;
+        }
+      }
+    })
+    .then(() => {
+      console.log("out", out);
+      cnt.innerHTML = out;
+    });
+</script>
+{% endblock body %}
